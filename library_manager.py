@@ -79,16 +79,83 @@ def search_book():
         else:
             st.error("❌ No books found.")
 
+# Custom CSS for styling
+st.markdown("""
+    <style>
+    .book-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+    .book-card img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+    .book-card h3 {
+        margin: 0;
+        color: #333;
+    }
+    .book-card p {
+        margin: 5px 0;
+        color: #666;
+    }
+    .status-button {
+        margin-top: 10px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # Display All Books Function
 def display_all_books():
-    st.markdown("<h2 class='sub-header'>📚 All Books in Library</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #333;'>📚 All Books in Library</h2>", unsafe_allow_html=True)
+    
     if not st.session_state.library:
         st.warning("⚠️ No books in the library.")
     else:
-        for book in st.session_state.library:
-            status = "✅ Read" if book["read"] else "❌ Unread"
-            st.markdown(f"<div class='book-card'><strong>{book['title']}</strong> - {book['author']} ({book['year']}) [{book['genre']}] - {status}</div>", unsafe_allow_html=True)
+        for i, book in enumerate(st.session_state.library):
+            # Book Card
+            st.markdown(f"""
+                <div class='book-card'>
+                    <h3>{book['title']}</h3>
+                    <p><strong>Author:</strong> {book['author']}</p>
+                    <p><strong>Year:</strong> {book['year']}</p>
+                    <p><strong>Genre:</strong> {book['genre']}</p>
+                    {f"<img src='{book['image_url']}' alt='Book Cover' style='width: 150px;'>" if 'image_url' in book else ""}
+                    <p><strong>Status:</strong> {"✅ Read" if book["read"] else "❌ Unread"}</p>
+                </div>
+            """, unsafe_allow_html=True)
 
+            # Toggle Read/Unread Button
+            if st.button(f"Toggle Status for {book['title']}", key=f"button_{i}"):
+                st.session_state.library[i]["read"] = not st.session_state.library[i]["read"]
+                st.experimental_rerun()  # Refresh the page to update the status
+
+# Example Data
+if 'library' not in st.session_state:
+    st.session_state.library = [
+        {
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "year": 1925,
+            "genre": "Fiction",
+            "read": False,
+            "image_url": "https://example.com/great-gatsby.jpg"
+        },
+        {
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "year": 1960,
+            "genre": "Fiction",
+            "read": True,
+            "image_url": "https://example.com/mockinbird.jpg"
+        }
+    ]
+
+# Run the function
+display_all_books()
 # Display Library Statistics
 def display_statistics():
     st.markdown("<h2 class='sub-header'>📊 Library Statistics</h2>", unsafe_allow_html=True)
