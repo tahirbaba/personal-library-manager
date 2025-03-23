@@ -123,7 +123,7 @@ def display_all_books():
                     <p><strong>Author:</strong> {book['author']}</p>
                     <p><strong>Year:</strong> {book['year']}</p>
                     <p><strong>Genre:</strong> {book['genre']}</p>
-                    {f"<img src='{book['image_url']}' alt='Book Cover' style='width: 150px;'>" if 'image_url' in book else ""}
+                    {f"<img src='{book['https://booknet.com.pk/wp-content/uploads/2019/05/94609.jpg']}' alt='Book Cover' style='width: 150px;'>" if 'image_url' in book else ""}
                     <p><strong>Status:</strong> {"✅ Read" if book["read"] else "❌ Unread"}</p>
                 </div>
             """, unsafe_allow_html=True)
