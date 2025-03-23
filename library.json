@@ -1,42 +1,52 @@
-[
-  {
-    "title": "Pakistan: A Hard Country",
-    "author": "Anatol Lieven",
-    "publication_year": 2011,
-    "genre": "Current Affairs, Politics",
-    "read_status": false,
-    "add_data": "2025-03-14 10:30:00"
-  },
-  {
-    "title": "The Pakistan Paradox: Instability and Resilience",
-    "author": "Christophe Jaffrelot",
-    "publication_year": 2015,
-    "genre": "Current Affairs, Political Science",
-    "read_status": true,
-    "add_data": "2025-03-14 10:30:00"
-  },
-  {
-    "title": "Pakistan: Beyond the 'Crisis State'",
-    "author": "Maleeha Lodhi",
-    "publication_year": 2011,
-    "genre": "Current Affairs, International Relations",
-    "read_status": false,
-    "add_data": "2025-03-14 10:30:00"
-  },
-  {
-    "title": "Military Inc.: Inside Pakistan’s Military Economy",
-    "author": "Ayesha Siddiqa",
-    "publication_year": 2007,
-    "genre": "Current Affairs, Military Studies",
-    "read_status": true,
-    "add_data": "2025-03-14 10:30:00"
-  },
-  {
-    "title": "Pakistan's Drift into Extremism: Allah, the Army, and America’s War on Terror",
-    "author": "Hassan Abbas",
-    "publication_year": 2005,
-    "genre": "Current Affairs, Terrorism",
-    "read_status": false,
-    "add_data": "2025-03-14 10:30:00"
-  }
-]
+{
+  "books": [
+    {
+      "title": "The Constitution of Pakistan",
+      "author": "M. Zafar Iqbal Kalanauri",
+      "genre": "Law, Constitution",
+      "publication_year": 2020
+    },
+    {
+      "title": "Pakistan Penal Code with Commentary",
+      "author": "Shaukat Mahmood",
+      "genre": "Criminal Law",
+      "publication_year": 2018
+    },
+    {
+      "title": "Manual of Civil Laws in Pakistan",
+      "author": "Dr. Liaqat Niazi",
+      "genre": "Civil Law",
+      "publication_year": 2019
+    },
+    {
+      "title": "Business and Corporate Laws of Pakistan",
+      "author": "S. A. Rehman",
+      "genre": "Corporate Law",
+      "publication_year": 2021
+    },
+    {
+      "title": "Family Laws in Pakistan",
+      "author": "Aamir Raza",
+      "genre": "Family Law",
+      "publication_year": 2017
+    },
+    {
+      "title": "Labour Laws of Pakistan",
+      "author": "Irfan Qadir",
+      "genre": "Labour Law",
+      "publication_year": 2016
+    },
+    {
+      "title": "Cyber Laws of Pakistan",
+      "author": "Waqar Ahmad",
+      "genre": "Cyber Law",
+      "publication_year": 2022
+    },
+    {
+      "title": "Environmental Laws of Pakistan",
+      "author": "Dr. Zubair Ahmed",
+      "genre": "Environmental Law",
+      "publication_year": 2019
+    }
+  ]
+}
